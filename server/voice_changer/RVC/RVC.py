@@ -28,7 +28,7 @@ from const import HUBERT_ONNX_MODEL_PATH
 import pyworld as pw
 
 from voice_changer.RVC.custom_vc_infer_pipeline import VC
-from infer_pack.models import SynthesizerTrnMs256NSFsid
+from voice_changer.RVC.infer_pack.models import SynthesizerTrnMs256NSFsid
 from fairseq import checkpoint_utils
 providers = ['OpenVINOExecutionProvider', "CUDAExecutionProvider", "DmlExecutionProvider", "CPUExecutionProvider"]
 

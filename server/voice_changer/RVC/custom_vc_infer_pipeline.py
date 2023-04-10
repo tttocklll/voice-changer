@@ -4,7 +4,7 @@ import torch
 import pdb
 from time import time as ttime
 import torch.nn.functional as F
-from config import x_pad, x_query, x_center, x_max
+from voice_changer.RVC.config import x_pad, x_query, x_center, x_max
 import scipy.signal as signal
 import pyworld
 import os

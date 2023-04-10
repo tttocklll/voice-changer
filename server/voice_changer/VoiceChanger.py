@@ -4,7 +4,7 @@ import torch
 import os
 import traceback
 import numpy as np
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 import resampy
 
 
@@ -46,9 +46,9 @@ class VoiceChangerSettings():
     recordIO: int = 0  # 0:off, 1:on
 
     # ↓mutableな物だけ列挙
-    intData: list[str] = ["inputSampleRate", "crossFadeOverlapSize", "recordIO"]
-    floatData: list[str] = ["crossFadeOffsetRate", "crossFadeEndRate"]
-    strData: list[str] = []
+    intData: list[str] = field(default_factory=lambda: ["inputSampleRate", "crossFadeOverlapSize", "recordIO"])
+    floatData: list[str] = field(default_factory=lambda: ["crossFadeOffsetRate", "crossFadeEndRate"])
+    strData: list[str] = field(default_factory=lambda: [])
 
 
 class VoiceChanger():
